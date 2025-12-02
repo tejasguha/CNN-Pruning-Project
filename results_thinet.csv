@@ -1,2 +1,14 @@
-sparsity,accuracy
-92.36,73.98
+import csv
+
+# Your nuclear pruning results
+results = [
+    {'sparsity': 92.36, 'accuracy': 73.98}
+]
+
+# Create CSV file
+with open('results_nuclear.csv', 'w', newline='') as f:
+    writer = csv.DictWriter(f, fieldnames=['sparsity', 'accuracy'])
+    writer.writeheader()
+    writer.writerow(results[0])
+
+print("CSV file created: results_nuclear.csv")
